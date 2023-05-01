@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Weather</title>
+  <style>
+    nav ul{ 
+    float: right;
+    margin: 0;
+    margin-right: 1.9rem;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000000;
+    padding: 28px;
+}
+nav ul li a:hover{
+    background-color: crimson;
+    color: #ffffff;
+}
+    #weather {
+      margin: 50px auto;
+      width: 400px;
+      text-align: center;
+      border-radius: 50px;
+      background-color: blue;
+      height: 300px;
+      color: #fff;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 200px;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <nav><br>
+    <ul>
+
+        <li class="k"><font face="Lato" size="6">Ghana tourist App</font></li>
+        <li><a href="Home.html">HOME</a></li>
+        <li><a href="Regions.html">Regions</a></li>
+        <li><a href="Language translator.html">Language translator</a></li>
+        <li><a href="Currency convertor.html">Currency convertor</a></li>
+        <li><a href="Weather.html">Weather</a></li>
+        <li><a href="Bookings.html">Social Feed</a></li>
+        <li><a href="Logins.html">Login</a></li>
+        
+    </ul>
+</nav> <br><br>
+<div id="weather" style="border-radius: 10px; background-color: blue;">
+  <h1>Current Weather</h1>
+  <form id="search-form">
+    <input type="text" id="search-input" placeholder="Enter a location">
+    <input type="submit" value="Search">
+  </form>
+  <div id="weather-data"></div>
+</div>
+ 
+  <script src="weather.js"></script>
+</body>
+</html>

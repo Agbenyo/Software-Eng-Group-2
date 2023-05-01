@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+    <link rel="stylesheet" href="Currency convertor.css">
+	<script type="text/javascript">
+		function convertCurrency() {
+			var amount = document.getElementById("amount").value;
+			var fromCurrency = document.getElementById("fromCurrency").value;
+			var toCurrency = document.getElementById("toCurrency").value;
+			var url = "https://api.apilayer.com/exchangerates_data/convert?to=" + toCurrency + "&from=" + fromCurrency + "&amount=" + amount;
+			fetch(url, {
+				headers: {
+					"apikey": "DVrXtXnFzzeoI9WlwgD00iLciPCyE0aW"
+				}
+			})
+			.then(response => response.json())
+			.then(data => {
+				var result = data.result;
+				document.getElementById("result").innerHTML = result;
+			})
+			.catch(error => console.log('error', error));
+		}
+	</script>
+</head>
+<body>
+    <nav>
+        <ul>
+    
+            <li class="k"><font face="Lato" size="6">Ghana tourist App</font></li>
+            <li><a href="Home.html">HOME</a></li>
+            <li><a href="Regions.html">Regions</a></li>
+            <li><a href="Language translator.html">Language translator</a></li>
+            <li><a href="Currency convertor.html">Currency convertor</a></li>
+            <li><a href="Weather.html">Weather</a></li>
+            <li><a href="Bookings.html">Social Feed</a></li>
+            <li><a href="Logins.html">Login</a></li>
+            
+        </ul>
+    </nav> 
+   <center>
+	<h1>Currency Converter</h1>
+    <div>
+	<label for="amount">Amount:</label>
+	<input type="text" id="amount" name="amount"><br><br><br>
+</div>
+	<label for="fromCurrency">From Currency:</label>
+	<select id="fromCurrency" name="fromCurrency">
+		<option value="USD">US Dollar</option>
+		<option value="EUR">Euro</option>
+		<option value="JPY">Japanese Yen</option>
+		<option value="GBP">British Pound Sterling</option>
+        <option value="GHS" selected>Ghana Cedis</option>
+	</select><br><br>
+	<label for="toCurrency">To Currency:</label>
+	<select id="toCurrency" name="toCurrency">
+		<option value="USD">US Dollar</option>
+		<option value="EUR">Euro</option>
+		<option value="JPY">Japanese Yen</option>
+		<option value="GBP">British Pound Sterling</option>
+        <option value="GHS" selected>Ghana Cedis</option>
+	</select><br><br>
+	<button onclick="convertCurrency()">Convert</button><br><br>
+	<label for="result">Result:</label>
+	<span id="result"></span>
+</center>
+</div>
+</body>
+</html>
